@@ -8,8 +8,13 @@ import { HomeComponent } from './home/home.component';
 })
 export class AppComponent {
   
+  links = [
+    {path: '/home', icon: 'home', label: 'Home'},
+    {path: '/home', icon: 'view_quilt', label: 'Home2'}
+  ];
   constructor() {}
 
   ngOnInit() {
   }
+
 }

@@ -9,7 +9,7 @@ import {
   MatSidenavModule,
   MatSnackBarModule,
   MatToolbarModule,
-  MatMenuModule
+  MatMenuModule,
 } from '@angular/material';
 
 @NgModule({
