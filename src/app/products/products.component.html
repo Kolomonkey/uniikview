@@ -1,5 +1,18 @@
 <mat-card>
-    <p *ngFor='let product of products'>{{product.name}}</p>
-
-    <pre>{{product | json}}</pre>
+<table>
+    <tr>
+        <th mat-header>Product Image</th>
+        <th mat-header>Sku</th>
+        <th mat-header>Name</th>
+        <th mat-header>Description</th>
+    </tr>
+    <tr *ngFor='let product of products'>
+        <td><img src="{{product.product_image}}" style='width: 125px; border: solid 2px;'></td>
+        <td>{{product.sku}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.description}}</td>
+    </tr>
+</table>
 </mat-card>
+
+<pre>{{products | json}}</pre>
