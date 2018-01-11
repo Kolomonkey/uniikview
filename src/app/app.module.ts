@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Http, HttpModule } from '@angular/http';
 
 import { AppMaterialModule} from './app-material.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,7 +23,8 @@ import { ProductsComponent } from './products/products.component';
     BrowserModule,
     AppMaterialModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpModule
   ],
   providers: [ProductsService],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Http, Headers, URLSearchParams } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { Product } from './product.model';
+import 'rxjs/add/operator/map';
 
 const BASE_URL = 'http://localhost:3000/products/';
 
@@ -12,7 +13,7 @@ export class ProductsService {
 
   all() {
     return this.http.get(BASE_URL)
-      .map()
-  }
-
+      .map(res => res.json());
+    }
+    
 }

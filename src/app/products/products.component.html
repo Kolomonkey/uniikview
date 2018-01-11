@@ -1,1 +1,5 @@
-<mat-card></mat-card>
+<mat-card>
+    <p *ngFor='let product of products'>{{product.name}}</p>
+
+    <pre>{{product | json}}</pre>
+</mat-card>
