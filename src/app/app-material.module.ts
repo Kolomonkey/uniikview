@@ -10,8 +10,11 @@ import {
   MatSnackBarModule,
   MatToolbarModule,
   MatMenuModule,
-  MatSortModule
+  MatSortModule,
+  MatTableModule,
 } from '@angular/material';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   imports: [
@@ -25,7 +28,9 @@ import {
     MatSnackBarModule,
     MatToolbarModule,
     MatMenuModule,
-    MatSortModule
+    MatSortModule,
+    MatTableModule,
+    FormsModule
   ],
   exports: [
     MatButtonModule,
@@ -38,7 +43,9 @@ import {
     MatSnackBarModule,
     MatToolbarModule,
     MatMenuModule,
-    MatSortModule
+    MatSortModule,
+    MatTableModule,
+    FormsModule
   ]
 })
 export class AppMaterialModule {

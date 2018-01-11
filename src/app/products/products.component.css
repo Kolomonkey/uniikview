@@ -1,3 +1,6 @@
-.name {
-    padding: 100px;
+mat-header-cell{
+    font-size: 18px;
+}
+mat-cell {
+    font-size: 16px;
 }

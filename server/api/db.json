@@ -1,22 +1,25 @@
 {
-    "products": [
-        {
-            "sku": 1,
-            "name": "Necklace",
-            "description": "A very pretty necklace",
-            "product_image": "https://cdn.shopify.com/s/files/1/2019/6967/products/bow-necklace-rope-chain-477.jpg?v=1502379441"
-        },
-        {
-            "sku": 2,
-            "name": "Bracelet",
-            "description": "A very pretty bracelet",
-            "product_image": "https://cdn.shopify.com/s/files/1/2019/6967/products/best-friend-black-leather-bracelet-1190.jpg?v=1502378545"
-        },
-        {
-            "sku": 3,
-            "name": "Journal",
-            "description": "A very useful journal",
-            "product_image": "https://cdn.shopify.com/s/files/1/2019/6967/products/embossed-wrap-journal-black-2646.jpg?v=1502376650"
-        }
-    ]
+  "products": [
+    {
+      "id": 1,
+      "sku": 1,
+      "name": "Necklace",
+      "description": "A very pretty necklace",
+      "product_image": "https://cdn.shopify.com/s/files/1/2019/6967/products/bow-necklace-rope-chain-477.jpg?v=1502379441"
+    },
+    {
+      "id": 2,
+      "sku": 2,
+      "name": "Bracelet",
+      "description": "A very pretty bracelet",
+      "product_image": "https://cdn.shopify.com/s/files/1/2019/6967/products/best-friend-black-leather-bracelet-1190.jpg?v=1502378545"
+    },
+    {
+      "id": 3,
+      "sku": 3,
+      "name": "Journal",
+      "description": "A very useful journal",
+      "product_image": "https://cdn.shopify.com/s/files/1/2019/6967/products/embossed-wrap-journal-black-2646.jpg?v=1502376650"
+    }
+  ]
 }

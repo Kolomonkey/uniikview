@@ -1,0 +1,28 @@
+<mat-card>
+    <mat-table [dataSource]='dataSource'>
+    
+      <ng-container matColumnDef='sku'>
+          <mat-header-cell *matHeaderCellDef> Sku </mat-header-cell>
+          <mat-cell *matCellDef='let product'><mat-form-field><input matInput [(ngModel)]='product.sku' type='text' name='name'></mat-form-field></mat-cell>
+      </ng-container>  
+      
+      <ng-container matColumnDef='name'>
+          <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+          <mat-cell *matCellDef='let product'><mat-form-field><input matInput [(ngModel)]='product.name' (blur)='saved.emit(product)' type='text' name='name'></mat-form-field></mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef='description'>
+        <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+        <mat-cell *matCellDef='let product'><mat-form-field class='hello'><input matInput [(ngModel)]='product.description' type='text' name='name'></mat-form-field></mat-cell>
+      </ng-container>
+    
+      <ng-container matColumnDef='product_image'>
+          <mat-header-cell *matHeaderCellDef> Product Image </mat-header-cell>
+          <mat-cell *matCellDef='let product'><img src='{{product.product_image}}' style='width: 150px; border: #ddd solid 2px; margin: 8px'></mat-cell>
+      </ng-container>
+    
+      <mat-header-row *matHeaderRowDef="productColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: productColumns;"></mat-row>
+    
+    </mat-table>
+</mat-card>
