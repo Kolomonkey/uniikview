@@ -13,9 +13,10 @@ export class ProductsComponent implements OnInit {
   products: Product[];
   currentProduct: Product;
   dataSource = new MatTableDataSource<Product>();
-
   hoverId: number;
   confirm = false;
+  newProduct: Product = {id: null, sku: "", name: "", description: "", product_image: ""};
+  productColumns = ['product_image', 'sku', 'name', 'description', 'actions'];
 
   constructor(private ps: ProductsService) { }
 
@@ -29,7 +30,6 @@ export class ProductsComponent implements OnInit {
       this.hoverId = productId;
     } else {
       this.hoverId = productId;
-      console.log(productId)
     }
   }
 

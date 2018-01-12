@@ -2,9 +2,12 @@
     [dataSource]='dataSource'
     [hoverId]='hoverId'
     [confirm]='confirm'
+    [newProduct]='newProduct'
+    [productColumns]='productColumns'
     (saved)='saveProduct($event)'
     (delete)='deleteProduct($event)'
     (create)='saveProduct($event)'
     (setHoverId)='setHoverId($event)'
-    (confirmToggle)='confirmToggle($event)'>
+    (confirmToggle)='confirmToggle($event)'
+    (resetNewProduct)='resetNewProduct($event)'>
 </app-products-view>

@@ -7,13 +7,12 @@ import { Product } from '../../shared';
   styleUrls: ['./products-view.component.css']
 })
 export class ProductsViewComponent{
-
-  productColumns = ['product_image', 'sku', 'name', 'description', 'actions'];
-  newProduct: Product = {id: null, sku: "", name: "", description: "", product_image: ""};
   
   @Input() dataSource: Product[];
   @Input() hoverId: number;
+  @Input() newProduct: Product;
   @Input() confirm;
+  @Input() productColumns;
 
   @Output() saved = new EventEmitter();
   @Output() delete = new EventEmitter();

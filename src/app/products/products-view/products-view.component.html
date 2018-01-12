@@ -24,7 +24,9 @@
 
       <ng-container matColumnDef='actions'>
         <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
-        <mat-cell *matCellDef='let product'><button mat-icon-button *ngIf='!confirm && (product.id === hoverId)' (click)='confirmToggle.emit()'><mat-icon *ngIf='!confirm && (product.id === hoverId)'>clear</mat-icon></button><button mat-button style='margin-right: 15px;' *ngIf='confirm && (product.id === hoverId)' (click)='confirmToggle.emit()'>Cancel</button><button mat-raised-button color='warn' *ngIf='confirm && (product.id === hoverId)' (click)='delete.emit(product)' (click)='confirmToggle.emit()'>Delete</button></mat-cell>
+        <mat-cell *matCellDef='let product'><button mat-icon-button *ngIf='!confirm && (product.id === hoverId)' (click)='confirmToggle.emit()'><mat-icon *ngIf='!confirm && (product.id === hoverId)'>clear</mat-icon></button>
+                                            <button mat-button style='margin-right: 15px;' *ngIf='confirm && (product.id === hoverId)' (click)='confirmToggle.emit()'>Cancel</button>
+                                            <button mat-raised-button color='warn' *ngIf='confirm && (product.id === hoverId)' (click)='delete.emit(product)' (click)='confirmToggle.emit()'>Delete</button></mat-cell>
       </ng-container>
     
       <mat-header-row *matHeaderRowDef="productColumns"></mat-header-row>
@@ -35,7 +37,7 @@
 <mat-card style='margin-top: 15px;'>
 <mat-card-title><h3>Add a product</h3></mat-card-title>
 <mat-card-content>
-    <form (submit)='create.emit(newProduct)'>
+    <form #createProductForm='ngForm' (submit)='create.emit(newProduct); createProductForm.reset()'>
         <mat-form-field class='create-form-field'>
             <input matInput required [(ngModel)]='newProduct.product_image' placeholder="Product Image URL" name='product_image'>
         </mat-form-field>
@@ -51,7 +53,7 @@
         <mat-form-field class='create-form-field'>
             <input matInput required [(ngModel)]='newProduct.description' placeholder="Description" name='description'>
         </mat-form-field>
-        <button mat-raised-button class='create-form-field' type='submit' color='primary' style='margin-left: 15px;'>Create</button>
+        <button mat-raised-button class='create-form-field' [disabled]='!createProductForm.form.valid' type='submit' color='primary' style='margin-left: 15px;'>Create</button>
     </form>
 </mat-card-content>
 </mat-card>
