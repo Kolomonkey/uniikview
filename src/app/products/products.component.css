@@ -4,3 +4,9 @@ mat-header-cell{
 mat-cell {
     font-size: 16px;
 }
+.mat-form-field-underline {
+    background-color: rgba(0,0,0,0);
+    color: rgba(0,0,0,0);
+    height:0!important;
+    display: none;
+}

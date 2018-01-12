@@ -17,16 +17,16 @@
     {
       "id": 3,
       "sku": "jn-24",
-      "name": "Journal",
+      "name": "Journalsdfgsdfg",
       "description": "A very useful journal",
       "product_image": "https://cdn.shopify.com/s/files/1/2019/6967/products/embossed-wrap-journal-black-2646.jpg?v=1502376650"
     },
     {
       "id": 4,
-      "sku": "pw-42",
-      "name": "Reindeer Cover",
-      "description": "This is a pretty neat pillow cover",
-      "product_image": "https://img0.etsystatic.com/219/0/9154633/il_570xN.1371449836_7x09.jpg"
+      "sku": "asdfas",
+      "name": "asdf",
+      "description": "sadfa",
+      "product_image": "https://cdn.shopify.com/s/files/1/2019/6967/products/embossed-wrap-journal-black-2646.jpg?v=1502376650"
     }
   ]
 }
