@@ -8,18 +8,17 @@ import { Product } from '../../shared';
 })
 export class ProductsViewComponent{
 
-  productColumns = ['product_image', 'sku', 'name', 'description'];
-  currentProduct: Product;
-  product: Product;
-  test;
+  productColumns = ['product_image', 'sku', 'name', 'description', 'actions'];
+  newProduct: Product = {id: null, sku: "", name: "", description: "", product_image: ""};
   
   @Input() dataSource: Product[];
+  @Input() hoverId: number;
+  @Input() confirm;
 
   @Output() saved = new EventEmitter();
-
-  setCurrentProduct(product) {
-    this.currentProduct = product;
-    console.log(this.currentProduct);
-  }
+  @Output() delete = new EventEmitter();
+  @Output() create = new EventEmitter();
+  @Output() setHoverId = new EventEmitter();
+  @Output() confirmToggle = new EventEmitter();
 
 }

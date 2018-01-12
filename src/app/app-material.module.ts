@@ -30,7 +30,7 @@ import { FormsModule } from '@angular/forms';
     MatMenuModule,
     MatSortModule,
     MatTableModule,
-    FormsModule
+    FormsModule,
   ],
   exports: [
     MatButtonModule,

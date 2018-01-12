@@ -1,9 +1,10 @@
 <mat-card>
+
     <mat-table [dataSource]='dataSource'>
     
       <ng-container matColumnDef='sku'>
           <mat-header-cell *matHeaderCellDef> Sku </mat-header-cell>
-          <mat-cell *matCellDef='let product'><mat-form-field><input matInput [(ngModel)]='product.sku' type='text' name='name'></mat-form-field></mat-cell>
+          <mat-cell *matCellDef='let product'><mat-form-field><input matInput [(ngModel)]='product.sku' (blur)='saved.emit(product)' type='text' name='sku'></mat-form-field></mat-cell>
       </ng-container>  
       
       <ng-container matColumnDef='name'>
@@ -13,16 +14,44 @@
       
       <ng-container matColumnDef='description'>
         <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
-        <mat-cell *matCellDef='let product'><mat-form-field class='hello'><input matInput [(ngModel)]='product.description' type='text' name='name'></mat-form-field></mat-cell>
+        <mat-cell *matCellDef='let product'><mat-form-field><input matInput [(ngModel)]='product.description' (blur)='saved.emit(product)' type='text' name='description'></mat-form-field></mat-cell>
       </ng-container>
     
       <ng-container matColumnDef='product_image'>
           <mat-header-cell *matHeaderCellDef> Product Image </mat-header-cell>
           <mat-cell *matCellDef='let product'><img src='{{product.product_image}}' style='width: 150px; border: #ddd solid 2px; margin: 8px'></mat-cell>
       </ng-container>
+
+      <ng-container matColumnDef='actions'>
+        <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+        <mat-cell *matCellDef='let product'><button mat-icon-button *ngIf='!confirm && (product.id === hoverId)' (click)='confirmToggle.emit()'><mat-icon *ngIf='!confirm && (product.id === hoverId)'>clear</mat-icon></button><button mat-button style='margin-right: 15px;' *ngIf='confirm && (product.id === hoverId)' (click)='confirmToggle.emit()'>Cancel</button><button mat-raised-button color='warn' *ngIf='confirm && (product.id === hoverId)' (click)='delete.emit(product)' (click)='confirmToggle.emit()'>Delete</button></mat-cell>
+      </ng-container>
     
       <mat-header-row *matHeaderRowDef="productColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: productColumns;"></mat-row>
+      <mat-row *matRowDef="let row; columns: productColumns;" (mouseover)='setHoverId.emit(row.id)'></mat-row>
     
     </mat-table>
+</mat-card>
+<mat-card style='margin-top: 15px;'>
+<mat-card-title><h3>Add a product</h3></mat-card-title>
+<mat-card-content>
+    <form (submit)='create.emit(newProduct)'>
+        <mat-form-field class='create-form-field'>
+            <input matInput required [(ngModel)]='newProduct.product_image' placeholder="Product Image URL" name='product_image'>
+        </mat-form-field>
+
+        <mat-form-field class='create-form-field'>
+            <input matInput required [(ngModel)]='newProduct.sku' placeholder="Sku" name='sku'>
+        </mat-form-field>
+
+        <mat-form-field class='create-form-field'>
+            <input matInput required [(ngModel)]='newProduct.name' placeholder="Name" name='name'>
+        </mat-form-field>
+
+        <mat-form-field class='create-form-field'>
+            <input matInput required [(ngModel)]='newProduct.description' placeholder="Description" name='description'>
+        </mat-form-field>
+        <button mat-raised-button class='create-form-field' type='submit' color='primary' style='margin-left: 15px;'>Create</button>
+    </form>
+</mat-card-content>
 </mat-card>

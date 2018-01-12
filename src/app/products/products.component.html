@@ -1,4 +1,10 @@
 <app-products-view
     [dataSource]='dataSource'
-    (saved)='saveProduct($event)'>
+    [hoverId]='hoverId'
+    [confirm]='confirm'
+    (saved)='saveProduct($event)'
+    (delete)='deleteProduct($event)'
+    (create)='saveProduct($event)'
+    (setHoverId)='setHoverId($event)'
+    (confirmToggle)='confirmToggle($event)'>
 </app-products-view>

@@ -3,3 +3,10 @@
     color: rgba(0,0,0,0);
     height:0!important;
 }
+.create-form-field{
+    width: 19%;
+}
+button {
+    font-weight: bold;
+    font-size: 15px;
+}

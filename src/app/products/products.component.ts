@@ -14,14 +14,31 @@ export class ProductsComponent implements OnInit {
   currentProduct: Product;
   dataSource = new MatTableDataSource<Product>();
 
+  hoverId: number;
+  confirm = false;
+
   constructor(private ps: ProductsService) { }
 
   ngOnInit() {
     this.getProducts()
   }
 
-  setCurrentProduct(product){
-    this.currentProduct = product;
+  setHoverId(productId){
+    if (this.confirm === true && this.hoverId != productId) {
+      this.confirmToggle();
+      this.hoverId = productId;
+    } else {
+      this.hoverId = productId;
+      console.log(productId)
+    }
+  }
+
+  confirmToggle(){
+    if (this.confirm != true) {
+      this.confirm = true
+    } else {
+      this.confirm = false;
+    }
   }
 
   getProducts() {
