@@ -30,6 +30,7 @@ export class ProductsComponent implements OnInit {
       this.hoverId = productId;
     } else {
       this.hoverId = productId;
+      console.log('Hello');
     }
   }
 

@@ -14,7 +14,8 @@
       
       <ng-container matColumnDef='description'>
         <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
-        <mat-cell *matCellDef='let product'><mat-form-field><input matInput [(ngModel)]='product.description' (blur)='saved.emit(product)' type='text' name='description'></mat-form-field></mat-cell>
+        <mat-cell *matCellDef='let product'><mat-form-field><textarea matInput [(ngModel)]='product.description' (blur)='saved.emit(product)' matTextareaAutosize matAutosizeMinRows="1"
+            matAutosizeMaxRows="5" type='text' name='description'></textarea></mat-form-field></mat-cell>
       </ng-container>
     
       <ng-container matColumnDef='product_image'>
@@ -51,7 +52,8 @@
         </mat-form-field>
 
         <mat-form-field class='create-form-field'>
-            <input matInput required [(ngModel)]='newProduct.description' placeholder="Description" name='description'>
+            <textarea matInput required [(ngModel)]='newProduct.description' matTextareaAutosize matAutosizeMinRows="1"
+            matAutosizeMaxRows="5" placeholder="Description" name='description'></textarea>
         </mat-form-field>
         <button mat-raised-button class='create-form-field' [disabled]='!createProductForm.form.valid' type='submit' color='primary' style='margin-left: 15px;'>Create</button>
     </form>
